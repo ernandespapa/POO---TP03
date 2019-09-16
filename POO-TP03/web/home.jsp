@@ -20,7 +20,7 @@
     
         <a  href="lista-discos.jsp">Cadastro de Discos</a>
     
-        <a  href="lista-musicos.jsp">Cadastro de Musicos</a>
+        <a  href="lista-musica.jsp">Cadastro de Musicos</a>
       
 
   </div>

@@ -11,10 +11,6 @@ package br.com.fatecpg.web;
  */
 public class CadastroBanda {
     private String nome;
-    
-     public void setDados(String nome){
-        this.nome = nome;
-    }
 
     public String getNome() {
         return nome;

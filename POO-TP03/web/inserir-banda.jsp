@@ -25,7 +25,7 @@
                 String nome = request.getParameter("nome");
                 
                 CadastroBanda c = new CadastroBanda();
-                c.setDados(nome);
+                c.setNome(nome);
                 DbBanda.getBandas().add(c);
                 response.sendRedirect("lista-banda.jsp");
             }
