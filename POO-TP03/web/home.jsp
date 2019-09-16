@@ -17,18 +17,10 @@
         <title>Cadastro de Bandas</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/header.jspf"%>
         <div>
 
-            <a  href="home.jsp">Home</a>
-
-            <a  href="lista-banda.jsp">Cadastro de Bandas </a>
-
-            <a  href="lista-discos.jsp">Cadastro de Discos</a>
-
-            <a  href="lista-musica.jsp">Cadastro de Musicos</a>
-
             <%
-
                 ArrayList<CadastroBanda> bandas = DbBanda.getBandas();
                 ArrayList<CadastroAlbum> albuns = DbBanda.getAlbuns();
                 ArrayList<CadastroMusica> musicas = DbBanda.getMusicas();
@@ -40,5 +32,6 @@
             <h2>Total Músicas: <%= musicas.size() - 1%></h2>
 
         </div>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>

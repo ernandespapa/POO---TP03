@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <title>Alterar - Pessoa</title>
+         <title>Alterar - Banda</title>
     </head>
     <body>
         <a  href="home.jsp">Home</a>
@@ -26,7 +26,7 @@
             if (request.getParameter("alterar") != null) {
                 String nome = request.getParameter("nome");
              
-                c.setDados(nome);
+                c.setNome(nome);
                 DbBanda.getBandas().set(i, c);
                 response.sendRedirect("lista-banda.jsp");
             }
@@ -35,7 +35,7 @@
         
          <form>
                 
-                    <h2>Alterar lista - Bandas </h2>
+                    <h2>Alterar Banda</h2>
                     <input type="hidden" name="i" value="<%=i%>"/>
                     <div>
                         <label>Nome:</label>

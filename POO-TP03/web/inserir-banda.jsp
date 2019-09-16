@@ -10,16 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inserir - Pessoa</title>
+        <title>Inserir - Banda</title>
     </head>
     <body>
-        <a  href="home.jsp">Home</a>
-      
-        <a  href="lista-banda.jsp">Cadastro de Bandas </a>
-    
-        <a  href="lista-discos.jsp">Cadastro de Discos</a>
-    
-        <a  href="lista-musicos.jsp">Cadastro de Musicos</a>
+        <%@include file="WEB-INF/jspf/header.jspf"%>
         <%
             if (request.getParameter("inserir") != null) {
                 String nome = request.getParameter("nome");
@@ -28,11 +22,15 @@
                 c.setNome(nome);
                 DbBanda.getBandas().add(c);
                 response.sendRedirect("lista-banda.jsp");
+            }else if(request.getParameter("cancelar") != null){
+            
+                response.sendRedirect("lista-banda.jsp");
+                
             }
         %>
         <form>
                 
-                    <h2>Inserir - Bandas</h2>
+                    <h2>Inserir - Banda</h2>
                     <div>
                         <label>Nome: </label>
                         <input type="text" name="nome" class="form-control"/>
@@ -40,6 +38,9 @@
                     
                     
                     <input type="submit" name="inserir" value="Inserir" class="btn btn-primary"/>
+                    <input type="submit" name="cancelar" value="Cancelar" class="btn btn-primary"/>
+                    
             </form>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>

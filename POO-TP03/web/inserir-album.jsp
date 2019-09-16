@@ -24,10 +24,15 @@
                 album.setNomeAlbum(nomeAlbum);
                 album.setIdBanda(codigoBanda);
                 DbBanda.getAlbuns().add(album);
-                response.sendRedirect("lista-album.jsp?codigoBanda="+codigoBanda);
+                response.sendRedirect("lista-album.jsp?codigoBanda=" + codigoBanda);
+            } else if (request.getParameter("cancelar") != null) {
+
+                response.sendRedirect("lista-album.jsp?codigoBanda=" + codigoBanda);
+
             }
 
         %>
+        <%@include file="WEB-INF/jspf/header.jspf"%>
         <form>
 
             <h2>Inserir - Album</h2>
@@ -39,7 +44,9 @@
 
 
             <input type="submit" name="inserir" value="Inserir" class="btn btn-primary"/>
+            <input type="submit" name="cancelar" value="Cancelar" class="btn btn-primary"/>
         </form>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
 

@@ -18,7 +18,7 @@
         <title>Lista - Música</title>
     </head>
     <body>
-        <a  href="lista-banda.jsp">Cadastro de Bandas</a>
+        <%@include file="WEB-INF/jspf/header.jspf"%>
         <h3>Lista - Música</h3>
         <table border="1">
             <thead>
@@ -48,5 +48,6 @@
             </tbody>
         </table>
         <a href="inserir-musica.jsp?codigoAlbum=<%=codigoAlbum%>"><button>Inserir</button></a>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
