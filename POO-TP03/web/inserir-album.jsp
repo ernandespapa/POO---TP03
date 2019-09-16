@@ -38,7 +38,7 @@
             <h2>Inserir - Album</h2>
             <div>
                 <label>Nome: </label>
-                <input type="text" name="nomeAlbum" class="form-control"/>
+                <input type="text" name="nomeAlbum" style="max-width:20%;" class="form-control"/>
                 <input type="hidden" name="codigoBanda" value="<%=codigoBanda%>">
             </div>
 

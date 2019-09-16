@@ -42,7 +42,7 @@
             <%}%>
         </tbody>
     </table>
-    <a href="inserir-banda.jsp"><button>Inserir</button></a>
+    <a class="btn btn-primary" href="inserir-banda.jsp">Inserir</a>
     <%@include file="WEB-INF/jspf/footer.jspf"%>
 </body>
 </html>

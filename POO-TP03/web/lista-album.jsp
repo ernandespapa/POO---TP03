@@ -38,8 +38,8 @@
                     <td><%=album.getNomeAlbum()%></td>
 
                     <td>
-                        <a href="alterar-banda.jsp?i=<%=i%>"><button>Alterar</button></a>
-                        <a href="excluir-banda.jsp?i=<%=i%>"><button>Excluir</button></a>
+                        <a href="alterar-album.jsp?i=<%=i%>"><button>Alterar</button></a>
+                        <a href="excluir-album.jsp?i=<%=i%>"><button>Excluir</button></a>
                         <a href="lista-musica.jsp?codigoAlbum=<%=i%>"><button>Listar Música</button></a>
                     </td>
                 </tr>
@@ -48,7 +48,7 @@
                 %>
             </tbody>
         </table>
-        <a href="inserir-album.jsp?codigoBanda=<%=codigoBanda%>"><button>Inserir</button></a>
+        <a class="btn btn-primary" href="inserir-album.jsp?codigoBanda=<%=codigoBanda%>">Inserir</a>
         <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>

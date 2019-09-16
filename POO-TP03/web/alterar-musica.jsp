@@ -1,8 +1,11 @@
 <%-- 
-    Document   : alterar-banda
-    Created on : 10/09/2019, 16:44:13
-    Author     : ernandes
+    Document   : alterar-musica
+    Created on : 16/09/2019, 11:11:14
+    Author     : Rodrigo
 --%>
+
+<%@page import="br.com.fatecpg.web.CadastroMusica"%>
+<%@page import="br.com.fatecpg.web.CadastroAlbum"%>
 <%@page import="br.com.fatecpg.web.CadastroBanda"%>
 <%@page import="br.com.fatecpg.web.DbBanda"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,18 +17,20 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf"%>
+      
+        
          <%
             int i = Integer.parseInt(request.getParameter("i"));
-            CadastroBanda c = DbBanda.getBandas().get(i);
+            CadastroMusica m = DbBanda.getMusicas().get(i);
             if (request.getParameter("alterar") != null) {
                 String nome = request.getParameter("nome");
              
-                c.setNome(nome);
-                DbBanda.getBandas().set(i, c);
-                response.sendRedirect("lista-banda.jsp");
+                m.setNomeMusica(nome);
+                DbBanda.getMusicas().set(i, m);
+                response.sendRedirect("lista-musica.jsp?codigoAlbum="+i);
             } else if (request.getParameter("cancelar") != null) {
 
-                response.sendRedirect("lista-banda.jsp?codigoBanda=" + i);
+                response.sendRedirect("lista-musica.jsp?codigoAlbum=" + i);
 
             }
         %>
@@ -33,16 +38,15 @@
         
          <form>
                 
-                    <h2>Alterar Banda</h2>
+                    <h2>Alterar Album</h2>
                     <input type="hidden" name="i" value="<%=i%>"/>
                     <div>
                         <label>Nome:</label>
-                        <input type="text" name="nome" class="form-control" value="<%=c.getNome()%>"/>
+                        <input type="text" name="nome" class="form-control" value="<%=m.getNomeMusica()%>"/>
                     
                     </div>
 
                     <input type="submit" name="alterar" class="btn btn-primary" value="Alterar"/>
-                    <input type="submit" name="cancelar" value="Cancelar" class="btn btn-primary"/>
             </form>
             <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
